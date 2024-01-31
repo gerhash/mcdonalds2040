@@ -36,7 +36,6 @@ const products = [
 
 
 
- 
 const Menu = () => {
     let firstproduct = products[0].items[0]
     const [selectedCategory, setSelectedCategory] = useState(null);
@@ -94,7 +93,7 @@ const Menu = () => {
 
             <div className='w-1/3 flex flex-col gap-1'>
                 {filteredItems.map((item, index) => (
-                    <div key={index} className='w-full bg-[#E29944] p-4 rounded-r-3xl'   onClick={() => handleItemClick(index)}>
+                    <div key={index} className='w-full bg-[#E29944] p-4 rounded-r-3xl' onClick={() => handleItemClick(index)}>
                         <h2 className='text-white text-[18px]'>{item.title}</h2>
                     </div>
                 ))}
