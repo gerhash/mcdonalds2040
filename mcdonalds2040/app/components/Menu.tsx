@@ -41,7 +41,7 @@ const Menu = () => {
 
     const [selectedCategory, setSelectedCategory] = useState(null);
 
-    const handleCategoryClick = (category) => {
+    const handleCategoryClick = (category:any) => {
       setSelectedCategory(category);
     };
   
@@ -54,17 +54,12 @@ const Menu = () => {
     <div className='flex justify-betweem w-full'>
         <div className='w-1/3  pl-[30px] pr-[10px] flex flex-col justify-center gap-4'>
             {products.map((product) => (
-                <div className='text-white'>
+                <div key={product.category} className='text-white'  onClick={() => handleCategoryClick(product.category)}>
                     <h1 className='text-[50px]'>{product.category}</h1>
                     <hr className='border-2 rounded-full border-white' />
                 </div>
   ))}
         </div>
-            <div>
-                    <div className='bg-blue-300 w-1/3'>
-
-            </div>
-</div>
 
         <div className='w-2/3 flex justify-center p-[50px]'>
             <div className='bg-white shadow-inner-xl w-2/3 border-2 border-[#E29944] rounded-l-2xl'>
@@ -81,8 +76,12 @@ const Menu = () => {
                         </div>
                     </div>
             </div>
-            <div className='bg-blue-300 w-1/3'>
-
+            <div className='w-1/3 flex flex-col gap-1'>
+                {filteredItems.map((item, index) => (
+                    <div key={index} className='w-full bg-[#E29944] p-4 rounded-r-3xl'>
+                        <h2 className='text-white text-[18px]'>{item.title}</h2>
+                    </div>
+                ))}
             </div>
         </div>
 
