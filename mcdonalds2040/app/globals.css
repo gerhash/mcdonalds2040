@@ -12,3 +12,7 @@
 body {
   background: #000000;
 }
+
+image {
+  background-image:url('./images/mcdonald.png')
+}
