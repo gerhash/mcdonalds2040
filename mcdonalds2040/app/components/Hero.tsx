@@ -4,6 +4,7 @@ import { logo, wrap, burger, cola,fries} from '../images/index'
 import Image from 'next/image';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import { log } from 'console';
+import Offer from "../components/Offer";
 
 const Hero: React.FC = () => {
  
@@ -27,6 +28,9 @@ const Hero: React.FC = () => {
                 </ParallaxLayer>
                 <ParallaxLayer offset={1} speed={1.3} className='flex justify-center'>
                      <Image src={fries}  alt="McDonald's" className='w-[200px] h-[180px] translate-x-[500px] -translate-y-[200px] rotate-[12deg]'/>
+                </ParallaxLayer>
+                <ParallaxLayer offset={1.5} speed={1.3} className='flex justify-center'>
+                    <Offer />
                 </ParallaxLayer>
             </Parallax>
         
