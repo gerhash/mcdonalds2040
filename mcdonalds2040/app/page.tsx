@@ -13,7 +13,7 @@ import { IoLogoBehance,IoLogoInstagram,IoLogoLinkedin,IoLogoGithub,IoLogoDribbbl
 export default function Home() {
   return (
    <main className="">
-    <Parallax pages={4} className='flex justify-center p-[20px]'>
+    <Parallax pages={5} className='flex justify-center p-[20px]'>
                 <ParallaxLayer offset={0} speed={0} className=' flex items-center justify-center'>
                     <Image src={logo}  alt="McDonald's" className='w-[150px] h-[130px]'/>
                 </ParallaxLayer>
@@ -35,17 +35,31 @@ export default function Home() {
                 <ParallaxLayer offset={1.5} speed={1.3} className='flex justify-center p-[50px]'>
                     <Offer />
                 </ParallaxLayer>
-                <ParallaxLayer offset={1.9} speed={3} className='flex justify-center p-[50px]'>
-                  <h1 className='text-transparent text-[100px] font-semibold bg-clip-text bg-gradient-to-r from-[#886AB5] to-[#C1FF72] translate-y-[1000px] '>Menu</h1>
-                </ParallaxLayer>
-
-                <ParallaxLayer offset={2} speed={1.3} className='flex justify-center p-[50px]'>
-                <h1 className='text-transparent text-[70px] font-semibold bg-clip-text bg-[#886AB5] translate-x-[180px]'>Per Mangiare Gratis</h1>
+                <ParallaxLayer offset={2} speed={2} className='flex justify-center p-[50px]'>
+                  <h1 className='text-transparent text-[100px] font-semibold bg-clip-text bg-gradient-to-r from-[#886AB5] to-[#C1FF72] -translate-y-[800px] '>Menu</h1>
                 </ParallaxLayer>
                 <ParallaxLayer offset={2} speed={0.5} className='flex justify-center p-[50px]'>
+
+                <Menu />
+
+                </ParallaxLayer>
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+                <ParallaxLayer offset={3} speed={1.3} className='flex justify-center p-[50px]'>
+                <h1 className='text-transparent text-[70px] font-semibold bg-clip-text bg-[#886AB5] translate-x-[180px]'>Per Mangiare Gratis</h1>
+                </ParallaxLayer>
+                <ParallaxLayer offset={3} speed={0.5} className='flex justify-center p-[50px]'>
                 <h1 className='text-transparent text-[100px] font-semibold bg-clip-text bg-white -translate-x-[200px] translate-y-[200px]'>Seguimi Su</h1>
                 </ParallaxLayer>
-                <ParallaxLayer offset={2.5} speed={0.8} className='flex justify-center p-[50px]'>
+                <ParallaxLayer offset={3.5} speed={0.8} className='flex justify-center p-[50px]'>
                     <div className='flex justify-center gap-4'>
                         <IoLogoLinkedin size={120} color="white"/>
                         <IoLogoGithub size={120} color="white"/>
@@ -55,13 +69,13 @@ export default function Home() {
                     </div>
                 </ParallaxLayer>
 
-                <ParallaxLayer offset={2.8} speed={0.5} className='flex justify-center p-[50px]'>
+                <ParallaxLayer offset={3.8} speed={0.5} className='flex justify-center p-[50px]'>
                 <h1 className='text-white text-[70px] font-semibold'>Gerardo D'Agostino</h1>
                 </ParallaxLayer>
-                <ParallaxLayer offset={2.9} speed={1} className='flex justify-center p-[50px]'>
+                <ParallaxLayer offset={3.9} speed={1} className='flex justify-center p-[50px]'>
                 <h1 className='text-white text-[120px] font-semibold'>Other Works</h1>
                 </ParallaxLayer>
-                <ParallaxLayer offset={2.9} speed={0} className='text-white flex justify-center items-center'>
+                <ParallaxLayer offset={3.9} speed={0} className='text-white flex justify-center items-center'>
                           VORTICE
                 </ParallaxLayer>
             </Parallax>
