@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import { log } from 'console';
 import Offer from "./components/Offer";
+import Menu from './components/Menu';
 
 export default function Home() {
   return (
@@ -30,6 +31,12 @@ export default function Home() {
                 </ParallaxLayer>
                 <ParallaxLayer offset={1.5} speed={1.3} className='flex justify-center p-[50px]'>
                     <Offer />
+                </ParallaxLayer>
+                <ParallaxLayer offset={1.9} speed={3} className='flex justify-center p-[50px]'>
+                  <h1 className='text-transparent text-[100px] font-semibold bg-clip-text bg-gradient-to-r from-[#886AB5] to-[#C1FF72] translate-y-[1000px] '>Menu</h1>
+                </ParallaxLayer>
+                <ParallaxLayer offset={2} speed={1.3} className='flex justify-center p-[50px]'>
+                    <Menu />
                 </ParallaxLayer>
             </Parallax>
   </main>

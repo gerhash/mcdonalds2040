@@ -35,7 +35,7 @@ const Offer = () => {
                 ))}
             </Slider>
             </div>
-            <div className='text-white mt-10 flex gap-10 '>
+            <div className='text-white mt-10 flex gap-[200px] translate-y-[50px] '>
                 <div className="p-4 bg-[#886AB5] rounded-full" onClick={() => sliderRef.current?.slickPrev()}>
                     <svg className="w-16 h-16 transform " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
