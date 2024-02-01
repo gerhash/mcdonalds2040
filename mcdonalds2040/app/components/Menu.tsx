@@ -14,7 +14,14 @@ const products = [
         ]},
     {
         category:"Bevande",
-        items:[{}]
+        items:[
+            {id:7, title:"CocaCola-G4®",motto:"Gusto CocaCola, G-4 di potenza!",desc:"Alla spina dispponibile nei formati 0,25L, 0,4L, 0,5L, 1,5L, 12,2L.",path:""},
+            {id:8, title:"MoonWater®",motto:"Not a Simple Water!",desc:"Acqua speciale dal principale fiume lunare, disponbiile solo 0,5L.",path:""},
+            {id:9, title:"Oxygen",motto:"Freschezza, naturalezza, nostalgia!",desc:"Ormai da anni non è più essenziale, ma è un piacere respirarlo di nuovo, bibita all'Ossigeno puro, formato da 0,5L.",path:""},
+            {id:10, title:"Antidote Rad",motto:"Scudo della pelle, sapore di stelle",desc:"Bevanda fresca estiva, sapore tropicale marziano, perfetta per curare radiazioni e ustioni, formato da 0,3L.",path:""},
+            {id:11, title:"SHIELD",motto:"Ricordi quel gioco la la...",desc:"50% scudo dopo averla bevuto, sapore blueberry, ottima consistenza, consigliato, formato soltanto 0,5L in giara di vetro",path:""},
+
+        ]
     },
     {
         category:"Patatine",
