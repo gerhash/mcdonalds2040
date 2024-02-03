@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
-
+import { useSpring,animated,useTransition } from 'react-spring'
+import VisibilitySensor from 'react-visibility-sensor';
 
 const products = [
     {
@@ -47,8 +48,9 @@ const Menu = () => {
     let firstproduct = products[0].items[0]
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [selectedItem, setSelectedItem] = useState(firstproduct);
+    const [isVisible, setIsVisible] = useState(false);
 
-
+    
    
 
 
@@ -68,22 +70,33 @@ const Menu = () => {
         // Imposta l'elemento selezionato nello stato
         setSelectedItem(clickedItem);
     };
-   
-
+        
+    const fade = useSpring({
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translate3d(0, 0, 0)' : 'translate3d(0, 50px, 0)',
+    });
     
+    const transitions = useTransition(filteredItems, {
+        from: { opacity: 0, transform: 'translate3d(-20px, 0, 0)' },
+        enter: { opacity: 1, transform: 'translate3d(0, 0, 0)' },
+        config: { duration: 500 },
+      });
+
   return (
     <div className='flex justify-betweem w-full'>
+         <VisibilitySensor onChange={(isVisible) => setIsVisible(isVisible)}>
         <div className='w-1/3  pl-[30px] pr-[10px] flex flex-col justify-center gap-4'>
             {products.map((product) => (
-                <div key={product.category} className='text-white'  onClick={() => handleCategoryClick(product.category)}>
+                <animated.div style={fade} key={product.category} className='text-white'  onClick={() => handleCategoryClick(product.category)}>
                     <h1 className='text-[50px]'>{product.category}</h1>
                     <hr className='border-2 rounded-full border-white' />
-                </div>
+                </animated.div>
   ))}
         </div>
+        </VisibilitySensor>
 
         <div className='w-2/3 flex justify-center p-[50px]'>
-            <div className='bg-white shadow-inner-xl w-2/3 border-2 border-[#E29944] rounded-l-2xl'>
+            <div id="box"  style={{ zIndex: 2 }} className='bg-white shadow-inner-xl w-2/3 border-2 border-[#E29944] rounded-l-2xl'>
                     <div className='h-full w-full flex flex-col justify-center items-center p-[30px]'>
                         <div className='bg-[#E29944] h-1/2 w-full rounded-2xl'>
                                 FOTO
@@ -97,14 +110,14 @@ const Menu = () => {
                         </div>
                     </div>
             </div>
-
-            <div className='w-1/3 flex flex-col gap-1'>
-                {filteredItems.map((item, index) => (
-                    <div key={index} className='w-full bg-[#E29944] p-4 rounded-r-3xl' onClick={() => handleItemClick(index)}>
-                        <h2 className='text-white text-[18px]'>{item.title}</h2>
-                    </div>
-                ))}
-            </div>
+            <div  style={{ zIndex: 1 }} className='w-1/3 flex flex-col gap-1'>
+            {transitions((style, item, _, index) => (
+                <animated.div key={index} style={style} onClick={() => handleItemClick(index)} className='w-full bg-[#E29944] p-4 rounded-r-3xl'>
+                <h2 className='text-white text-[18px]'>{item.title}</h2>
+                </animated.div>
+            ))}
+        </div>
+            
         </div>
 
     </div>
