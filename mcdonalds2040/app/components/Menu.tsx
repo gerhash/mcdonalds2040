@@ -49,7 +49,7 @@ const Menu = () => {
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [selectedItem, setSelectedItem] = useState(firstproduct);
     const [isVisible, setIsVisible] = useState(false);
-
+    const [itemIndex, selectedItemIndex] = useState(0);
     
    
 
@@ -67,6 +67,7 @@ const Menu = () => {
      // Funzione per gestire il clic su un item
     const handleItemClick = (index) => {
         const clickedItem = filteredItems[index];
+        selectedItemIndex(index);
         // Imposta l'elemento selezionato nello stato
         setSelectedItem(clickedItem);
     };
@@ -87,7 +88,7 @@ const Menu = () => {
          <VisibilitySensor onChange={(isVisible) => setIsVisible(isVisible)}>
         <div className='w-1/3  pl-[30px] pr-[10px] flex flex-col justify-center gap-4'>
             {products.map((product) => (
-                <animated.div style={fade} key={product.category} className='text-white'  onClick={() => handleCategoryClick(product.category)}>
+                <animated.div style={fade} key={product.category} className='text-white cursor-pointer'  onClick={() => handleCategoryClick(product.category)}>
                     <h1 className='text-[50px]'>{product.category}</h1>
                     <hr className='border-2 rounded-full border-white' />
                 </animated.div>
@@ -112,7 +113,7 @@ const Menu = () => {
             </div>
             <div  style={{ zIndex: 1 }} className='w-1/3 flex flex-col gap-1'>
             {transitions((style, item, _, index) => (
-                <animated.div key={index} style={style} onClick={() => handleItemClick(index)} className='w-full bg-[#E29944] p-4 rounded-r-3xl'>
+                <animated.div key={index} style={style} onClick={() => handleItemClick(index)}   className={`w-full bg-[#E29944] p-4 rounded-r-3xl cursor-pointer ${itemIndex === index ? '' : ''}`}>
                 <h2 className='text-white text-[18px]'>{item.title}</h2>
                 </animated.div>
             ))}
