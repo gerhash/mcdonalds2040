@@ -17,10 +17,16 @@ export default function Home() {
     <Parallax pages={5} className='flex justify-center p-[20px]'>
                 <ParallaxLayer offset={0} speed={0} className='flex justify-center'>
                     <div 
-                    className=' flex items-center justify-center'> 
+                    className=' flex flex-col items-center justify-center'> 
                         <Image src={logo}  alt="McDonald's" className='w-[150px] h-[130px]'/>
+
+
+
+
+
                     </div>
                 </ParallaxLayer>
+
                 <ParallaxLayer offset={0.45} speed={1.3} className='flex justify-center'>
                      <Image src={wrap}  alt="McDonald's" className='w-[360px] h-[320px] translate-x-[300px]  translate-y-[520px] rotate-[-52deg]'/>
                 </ParallaxLayer>
@@ -36,8 +42,9 @@ export default function Home() {
                 <ParallaxLayer offset={1} speed={1.3} className='flex justify-center'>
                      <Image src={fries}  alt="McDonald's" className='w-[200px] h-[180px] translate-x-[500px] -translate-y-[200px] rotate-[12deg]'/>
                 </ParallaxLayer>
-                <ParallaxLayer offset={1.5} speed={1.3} className='flex justify-center p-[50px]'>
-                    <Offer />
+                <ParallaxLayer offset={1.5} speed={1.3} className='flex flex-col items-center justify-center p-[50px]'>
+                    <Offer />                <p className='bg-yellow-500 p-4 rounded-lg text-white translate-y-[300px]'>(Click <span className='text-red-600'>X</span> on errors for Bettere Experiences)</p>
+
                 </ParallaxLayer>
                 <ParallaxLayer offset={2} speed={2} className='flex justify-center p-[50px]'>
                   <h1 className='text-transparent text-[100px] font-semibold bg-clip-text bg-gradient-to-r from-[#886AB5] to-[#C1FF72] -translate-y-[800px] '>Menu</h1>
