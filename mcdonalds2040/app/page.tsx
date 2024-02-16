@@ -7,11 +7,9 @@ import { log } from 'console';
 import Offer from "./components/Offer";
 import Menu from './components/Menu';
 import { IoLogoBehance,IoLogoInstagram,IoLogoLinkedin,IoLogoGithub,IoLogoDribbble } from "react-icons/io5";
-
+import Portal from './components/Portal';
 
 export default function Home() {
-
- 
 
 
   return (
@@ -49,15 +47,7 @@ export default function Home() {
                 <Menu />
 
                 </ParallaxLayer>
-               
-               
-               
-               
-               
-               
-               
-               
-               
+             
                
                 <ParallaxLayer offset={3} speed={1.3} className='flex justify-center p-[50px]'>
                 <h1 className='text-transparent text-[70px] font-semibold bg-clip-text bg-[#886AB5] translate-x-[180px]'>Per Mangiare Gratis</h1>
@@ -82,7 +72,7 @@ export default function Home() {
                 <h1 className='text-white text-[120px] font-semibold'>Other Works</h1>
                 </ParallaxLayer>
                 <ParallaxLayer offset={3.9} speed={0} className='text-white flex justify-center items-center'>
-                          VORTICE
+                    <Portal /> 
                 </ParallaxLayer>
             </Parallax>
            
