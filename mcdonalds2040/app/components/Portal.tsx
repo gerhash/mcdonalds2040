@@ -67,6 +67,11 @@ function useOnScreen(ref:any) {
     return (
       <div>
         <div className='translate-y-100' ref={targetRef}>
+        <div className="vortice-animation">
+          
+        </div>
+
+
         </div>
       </div>
     );

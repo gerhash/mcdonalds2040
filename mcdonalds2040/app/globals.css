@@ -20,10 +20,14 @@ image {
 
 /* Aggiungi queste regole CSS al tuo file CSS */
 .vortice-animation {
-  width: 60%; /* Regola le dimensioni secondo necessità */
+  width: 100%; /* Regola le dimensioni secondo necessità */
   height: 100%; /* Regola le dimensioni secondo necessità */
-  background-image: url('./images/IY0L.gif'); /* Usa la GIF come sfondo */
+  background-image: url('./images/portalo.png'); /* Usa la GIF come sfondo */
   background-size: cover; /* Adatta la dimensione del background */
   animation: spin 3s linear infinite; /* Avvia l'animazione */
 }
 
+@keyframes spin {
+  0% { transform: rotate(0deg); } /* Angolo di partenza */
+  100% { transform: rotate(360deg); } /* Angolo finale */
+}
